@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 540px) {
+    .container-captcha{
+     margin: auto;
+     width: 100%;
+     height: auto;   
+    }   
+}
+
+.container-captcha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: mediumslateblue;
+    min-width: 80%;
+    width: 60%;
+    min-height: 80vh;
+    height: 40vh;
+    margin: 50px auto;
+    position: relative;
+}
+@media screen and (max-width: 540px) {
+    .captcha-wrapper{
+     margin: auto;
+     width: auto; 
+     height: auto;  
+    }   
+}
+
+.captcha-wrapper{
+    background-color: grey;
+    width: 300px;
+    height: 70px;
+    position: relative;
+    margin: auto;
+    top: -30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.captcha-wrapper #spaning{
+    letter-spacing: 10px;
+    font-size: 21px;
+    font-weight: bold;
+    color: rgb(241, 251, 19, 0.2);
+    text-decoration: line-through;
+}
+.captcha-wrapper .fa-repeat{
+    position: absolute;
+    right: -30px;
+    background-color: lightcoral;
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    top: 25px;
+    padding: 7px 5px;
+    cursor: pointer;
+    transition: all 0.5s;border: none;
+    outline: none;
+    
+}
+@media screen and (max-width: 540px) {
+    .captcha-wrapper .fa-repeat{
+     margin: auto 0;
+     padding: 7px;
+     width: auto;
+     height: auto;  
+    }   
+}
+
+.captcha-wrapper .fa-repeat:hover{
+    background-color: darkcyan;
+    color: red;
+}
+@media screen and (max-width: 540px) {
+    .textbox-wrapper{
+     margin: auto;
+     padding: 10px;
+     width: auto;
+     height: 50px;
+     padding: 5px;  
+    }   
+}
+
+.textbox-wrapper{
+    position: absolute;
+    background-color: aliceblue;
+    width: 270px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+}
+@media screen and (max-width: 540px) {
+    .textbox-wrapper #mytextbox{
+     margin: auto 0;
+     padding: 10px;
+     width: auto;   
+    }   
+}
+
+.textbox-wrapper #mytextbox{
+    padding: 10px;
+    text-align: justify;
+    border: none;
+    outline: none;
+    background-color: lightslategrey;
+    color: #fff;
+    font-size: 15px;
+    width: 190px;
+}
+.textbox-wrapper #mybtn{
+    padding: 10px;
+    background-color: lightcoral;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+@media screen and (max-width: 540px) {
+    .textbox-wrapper #mybtn{
+     margin: auto 0; 
+     padding: 10px;  
+    }   
+}
+
+.textbox-wrapper #mybtn:hover{
+   background-color: darkcyan;
+   color: red;
+}
+@media screen and (max-width: 540px) {
+    .container-captcha #mylab{
+     margin: auto;   
+    }   
+}
+.container-captcha #mylab{
+    position: absolute;
+    bottom: 150px;
+    font-size: 23px;
+}

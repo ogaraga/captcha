@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-captcha">
+        <div class="captcha-wrapper">
+            <span id="spaning" aria-disabled="true">45@157%AD</span>
+            <i id="repeating" class="fa-solid fa-repeat"></i>
+        </div>
+        <div class="textbox-wrapper">
+            <input type="text" name="textboxarea" id="mytextbox" title="Must contain 9 characters while 45@157%AD is invalid default!" placeholder=" Enter the captcha">
+            <button type="submit" id="mybtn">Submit</button>
+        </div>
+        <label id="mylab"></label>
+    </div>
+
+    <script>
+var label = document.getElementById("mylab");
+var captcha = document.getElementById("spaning");
+var reloader = document.getElementById("repeating");
+var txtbox = document.getElementById("mytextbox");
+var btn = document.getElementById("mybtn");
+var myarrofCaptcha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','!','@','#','$','%','&']
+
+reloader.addEventListener("click", ()=>{
+    reloader.style.transform = "rotate(1turn)";
+    let emptyarr = "";
+    for(let i = 0; i < 9; i++){
+    const randomNum = Math.floor(Math.random()*myarrofCaptcha.length);
+    const mycaptcha = myarrofCaptcha[randomNum].toUpperCase(); 
+    emptyarr += mycaptcha;
+    
+    }
+    setTimeout(() => {
+        captcha.innerHTML = `${emptyarr}`; 
+    }, 1000);
+    setInterval(() => {
+        captcha.innerHTML = "Expired!";
+    }, 30000);
+   
+   })  
+btn.addEventListener("click", ()=>{
+    if (txtbox.value === captcha.innerHTML && txtbox.value !== "45@157%AD") {
+        txtbox.value = "";
+        txtbox.innerHTML = "";
+        label.innerHTML = "Correct Captcha! You are a Human!";
+        label.style.color = "green";
+    }
+    else{
+        txtbox.value = "";
+        txtbox.innerHTML = "";
+        label.innerHTML = "Incorrect Captcha! You are not a Human!";
+        label.style.color = "red";
+        
+    }
+})
+   
+   
+   
+   </script>
+</body>
+</html>
