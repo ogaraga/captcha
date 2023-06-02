@@ -26,7 +26,7 @@
 }
 @media screen and (max-width: 540px) {
     .captcha-wrapper{
-     margin: auto;
+     margin: auto 0;
      width: auto; 
      height: auto;  
     }   
@@ -34,11 +34,14 @@
 
 .captcha-wrapper{
     background-color: grey;
-    width: 300px;
+    max-width: 600px;
     height: 70px;
+    width: auto;
     position: relative;
     margin: auto;
     top: -30%;
+    left: -10px;
+    padding-left:10px;
     display: flex;
     justify-content: center;
     align-items: center;
